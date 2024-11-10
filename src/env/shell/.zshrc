@@ -17,6 +17,7 @@ alias brewd="brew bundle dump --file=Brewfile --force"
 
 ## Pnpm
 alias pn="pnpm"
+alias pnx="pnpm dlx"
 alias pna="pnpm add"
 alias pnu="pnpm update"
 alias pnr="pnpm rm"
