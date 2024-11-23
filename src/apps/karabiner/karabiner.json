@@ -1,0 +1,210 @@
+{
+	"global": { "enable_notification_window": false },
+	"profiles": [
+		{
+			"complex_modifications": {
+				"rules": [
+					{
+						"description": "Caps Lock → Escape (tap), Shift+Ctrl+Opt+Cmd (hold)",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "caps_lock",
+									"modifiers": { "optional": ["any"] }
+								},
+								"to": [
+									{
+										"key_code": "left_shift",
+										"lazy": true,
+										"modifiers": ["left_control", "left_option", "left_command"]
+									}
+								],
+								"to_if_alone": [{ "key_code": "escape" }],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Left Shift → Arc shortcut (tap), Left Shift (hold)",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "left_shift",
+									"modifiers": { "optional": ["any"] }
+								},
+								"to": [
+									{
+										"key_code": "left_shift",
+										"lazy": true
+									}
+								],
+								"to_if_alone": [
+									{
+										"key_code": "a",
+										"modifiers": ["left_shift", "left_control", "left_option", "left_command"]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Fn → Obsidian shortcut (tap), Fn (hold)",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "fn",
+									"modifiers": { "optional": ["any"] }
+								},
+								"to": [
+									{
+										"key_code": "fn",
+										"lazy": true
+									}
+								],
+								"to_if_alone": [
+									{
+										"key_code": "o",
+										"modifiers": ["left_shift", "left_control", "left_option", "left_command"]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Spacebar → Space (tap), Left Shift (hold)",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "spacebar",
+									"modifiers": { "optional": ["any"] }
+								},
+								"to": [{ "key_code": "left_shift" }],
+								"to_if_alone": [{ "key_code": "spacebar" }],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Right Cmd + H/J/K/L → Arrow keys",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "h",
+									"modifiers": {
+										"mandatory": ["right_command"],
+										"optional": ["any"]
+									}
+								},
+								"to": [{ "key_code": "left_arrow" }],
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "j",
+									"modifiers": {
+										"mandatory": ["right_command"],
+										"optional": ["any"]
+									}
+								},
+								"to": [{ "key_code": "down_arrow" }],
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "k",
+									"modifiers": {
+										"mandatory": ["right_command"],
+										"optional": ["any"]
+									}
+								},
+								"to": [{ "key_code": "up_arrow" }],
+								"type": "basic"
+							},
+							{
+								"from": {
+									"key_code": "l",
+									"modifiers": {
+										"mandatory": ["right_command"],
+										"optional": ["any"]
+									}
+								},
+								"to": [{ "key_code": "right_arrow" }],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Right Command → Raycast shortcut (tap), Right Command (hold)",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "right_command",
+									"modifiers": { "optional": ["any"] }
+								},
+								"to": [
+									{
+										"key_code": "right_command",
+										"lazy": true
+									}
+								],
+								"to_if_alone": [
+									{
+										"key_code": "r",
+										"modifiers": ["left_shift", "left_control", "left_option", "left_command"]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					},
+					{
+						"description": "Right Option → Warp Mini (tap), Right Option (hold)",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "right_option",
+									"modifiers": { "optional": ["any"] }
+								},
+								"to": [
+									{
+										"key_code": "right_option",
+										"lazy": true
+									}
+								],
+								"to_if_alone": [
+									{
+										"key_code": "w",
+										"modifiers": ["left_shift", "left_control", "left_option", "left_command"]
+									}
+								],
+								"type": "basic"
+							}
+						]
+					}
+				]
+			},
+			"devices": [
+				{
+					"disable_built_in_keyboard_if_exists": true,
+					"identifiers": {
+						"is_keyboard": true,
+						"is_pointing_device": true,
+						"product_id": 560,
+						"vendor_id": 13364
+					}
+				}
+			],
+			"fn_function_keys": [
+				{
+					"from": { "key_code": "f4" },
+					"to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
+				}
+			],
+			"name": "Default profile",
+			"selected": true,
+			"virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+		}
+	]
+}
