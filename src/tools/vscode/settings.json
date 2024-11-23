@@ -20,6 +20,12 @@
 	"window.openFilesInNewWindow": "on",
 	"window.title": "${profileName}${separator}${rootName}${separator}${activeEditorShort}",
 	"window.titleSeparator": " | ",
+
+	/**
+	 * Workbench
+	 */
+
+	"workbench.activityBar.location": "hidden",
 	"workbench.colorCustomizations": {
 		"[Panda Syntax]": {
 			"editorBracketHighlight.foreground1": "#E6E6E6",
