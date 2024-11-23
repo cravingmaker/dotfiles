@@ -1,0 +1,42 @@
+{
+	"name": "dotfiles",
+	"version": "1.0.0",
+	"description": "This repository contains my personal dotfiles, used to configure my development environment across machines.",
+	"keywords": [
+		"dotfiles"
+	],
+	"homepage": "https://github.com/cravingmaker/dotfiles#readme",
+	"bugs": {
+		"url": "https://github.com/cravingmaker/dotfiles/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cravingmaker/dotfiles"
+	},
+	"license": "MIT",
+	"author": "cravingmaker",
+	"main": "index.js",
+	"scripts": {
+		"format": "prettier --write",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"package.json": "pnpm run format",
+		"*.config.{js,cjs,mjs,ts,cts,mts,json*,yaml,yml,toml}": "pnpm run format",
+		"src/**/*.html": "pnpm run format",
+		"src/**/*.css": "pnpm run format",
+		"src/**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}": "pnpm run format",
+		"src/**/*.json*": "pnpm run format",
+		"src/**/*.{yaml, yml}": "pnpm run format",
+		"src/**/*.toml": "pnpm run format",
+		"src/**/*.sh": "pnpm run format"
+	},
+	"devDependencies": {
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"prettier": "^3.3.3",
+		"prettier-plugin-packagejson": "^2.5.3",
+		"prettier-plugin-sh": "^0.14.0"
+	},
+	"packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
+}

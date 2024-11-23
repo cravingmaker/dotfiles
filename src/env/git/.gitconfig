@@ -1,0 +1,54 @@
+[user]
+name = Craving Maker
+email = cravingmaker.id@gmail.com
+
+[init]
+defaultBranch = main
+
+[alias]
+it = init
+co = checkout
+a = add
+aa = add --all
+c = commit
+st = status
+rh = reset HEAD
+rhh = reset --hard HEAD
+fe = fetch
+pu = pull
+up = push
+
+l = "!. ~/.githelpers && pretty_git_log"
+la = "!git l --all"
+lr = "!git l -30"
+lra = "!git lr --all"
+lg = "!git l -G $1 -- $2"
+lt = log --oneline --decorate --graph
+
+feat = !sh -c 'git checkout --no-track -b $0 origin/main'
+
+ruf = "!. ~/.githelpers && remove_untracked_files"
+
+[core]
+excludesfile = /Users/arfajarsetiaji/.gitignore_global
+eol = lf
+autocrlf = false
+editor = code --wait
+
+[diff]
+tool = vscode
+
+[difftool "vscode"]
+cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+tool = vscode
+
+[mergetool "vscode"]
+cmd = code --wait $MERGED
+
+[credential "https://github.com"]
+helper = !/opt/homebrew/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+helper = !/opt/homebrew/bin/gh auth git-credential
