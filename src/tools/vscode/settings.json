@@ -201,6 +201,7 @@
 	"extensions.autoUpdate": false,
 	"extensions.ignoreRecommendations": true,
 
+	"git.autofetch": true,
 	"git.branchProtection": ["main", "master"],
 
 	"terminal.integrated.hideOnStartup": "always",
@@ -315,6 +316,7 @@
 		"appsettings",
 		"asax",
 		"ashx",
+		"autofetch",
 		"axaml",
 		"bazel",
 		"bazelignore",
@@ -328,8 +330,8 @@
 		"codeowners",
 		"contentlayer",
 		"cravingmaker",
-		"cursorrules",
 		"cssnanorc",
+		"cursorrules",
 		"czrc",
 		"dangerfile",
 		"dlint",
