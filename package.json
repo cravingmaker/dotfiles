@@ -11,11 +11,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/cravingmaker/dotfiles"
+		"url": "git+https://github.com/cravingmaker/dotfiles.git"
 	},
 	"license": "MIT",
 	"author": "cravingmaker",
-	"main": "index.js",
+	"type": "commonjs",
 	"scripts": {
 		"format": "prettier --write",
 		"prepare": "husky"
