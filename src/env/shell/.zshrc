@@ -33,7 +33,7 @@ alias pnc="rm -rf node_modules pnpm-lock.yaml && pnpm install"
 alias pncc="pnpm store prune && pnpm cache clean --all"
 
 ## Others
-alias copytree="tree -f -L 5 | pbcopy"
+alias cptree="tree -f -L 5 | pbcopy"
 
 # Miscellaneous
 ## Fnm
