@@ -19,9 +19,8 @@ export default tseslint.config(
 		},
 		settings: {
 			"import/resolver": {
-				typescript: {
-					project: "./tsconfig.json",
-				},
+				typescript: true,
+				node: true,
 			},
 		},
 		rules: {
