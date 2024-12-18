@@ -17,27 +17,50 @@
 	"author": "cravingmaker",
 	"type": "commonjs",
 	"scripts": {
-		"format": "prettier --write",
+		"format": "prettier --write .",
+		"lint": "pnpm run lint:eslint && pnpm run lint:publint",
+		"lint:eslint": "eslint --fix \"src/**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}\"",
+		"lint:publint": "pnpm dlx publint",
 		"prepare": "husky"
 	},
 	"lint-staged": {
-		"package.json": "pnpm run format",
-		"*.config.{js,cjs,mjs,ts,cts,mts,json*,yaml,yml,toml}": "pnpm run format",
-		"src/**/*.html": "pnpm run format",
-		"src/**/*.css": "pnpm run format",
-		"src/**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}": "pnpm run format",
-		"src/**/*.json*": "pnpm run format",
-		"src/**/*.{yaml, yml}": "pnpm run format",
-		"src/**/*.toml": "pnpm run format",
-		"src/**/*.sh": "pnpm run format"
+		"package.json": "prettier --write",
+		"*.config.{js,cjs,mjs,ts,cts,mts,json*,yaml,yml,toml}": "prettier --write",
+		"src/**/*.html": "prettier --write",
+		"src/**/*.css": "prettier --write",
+		"src/**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"src/**/*.json*": "prettier --write",
+		"src/**/*.{yaml, yml}": "prettier --write",
+		"src/**/*.toml": "prettier --write",
+		"src/**/*.sh": "prettier --write"
+	},
+	"dependencies": {
+		"clsx": "^2.1.1",
+		"tailwind-merge": "^2.5.5"
 	},
 	"devDependencies": {
+		"@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
+		"@eslint/js": "^9.17.0",
 		"@ianvs/prettier-plugin-sort-imports": "^4.4.0",
+		"@typescript-eslint/parser": "^8.18.1",
+		"eslint": "^9.17.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-import-resolver-typescript": "^3.7.0",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"eslint-plugin-react": "^7.37.2",
+		"eslint-plugin-react-hooks": "^5.1.0",
+		"globals": "^15.13.0",
 		"husky": "^9.1.6",
 		"lint-staged": "^15.2.10",
 		"prettier": "^3.3.3",
 		"prettier-plugin-packagejson": "^2.5.3",
-		"prettier-plugin-sh": "^0.14.0"
+		"prettier-plugin-sh": "^0.14.0",
+		"typescript": "^5.7.2",
+		"typescript-eslint": "^8.18.1"
 	},
 	"packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
 }
