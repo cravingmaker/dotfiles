@@ -1,3 +1,4 @@
+import commentsPlugin from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
 import prettierConfig from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
@@ -9,6 +10,7 @@ import globals from "globals";
 export default [
 	// ESLint
 	eslint.configs.recommended,
+	commentsPlugin.recommended,
 	importPlugin.flatConfigs.recommended,
 
 	// React
