@@ -46,6 +46,7 @@ export default tseslint.config(
 		files: ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
 		plugins: {
 			react: reactPlugin,
+			"react-hooks": reactHooksPlugin,
 			"jsx-a11y": jsxA11yPlugin,
 		},
 		languageOptions: {
@@ -59,16 +60,8 @@ export default tseslint.config(
 			},
 		},
 		rules: {
-			...jsxA11yPlugin.configs.recommended.rules,
-		},
-	},
-	{
-		files: ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
-		plugins: {
-			"react-hooks": reactHooksPlugin,
-		},
-		rules: {
 			...reactHooksPlugin.configs.recommended.rules,
+			...jsxA11yPlugin.configs.recommended.rules,
 			"react/react-in-jsx-scope": "off",
 		},
 	},
