@@ -18,6 +18,7 @@ export default [
 		files: ["**/*.{js,cjs,mjs,jsx}"],
 		plugins: {
 			react: reactPlugin,
+			"jsx-a11y": jsxA11yPlugin,
 		},
 		languageOptions: {
 			parserOptions: {
@@ -29,6 +30,9 @@ export default [
 				...globals.browser,
 			},
 		},
+		rules: {
+			...jsxA11yPlugin.configs.recommended.rules,
+		},
 	},
 	{
 		files: ["**/*.{js,cjs,mjs,jsx}"],
@@ -38,19 +42,6 @@ export default [
 		rules: {
 			...reactHooksPlugin.configs.recommended.rules,
 			"react/react-in-jsx-scope": "off",
-		},
-	},
-	{
-		files: ["**/*.{js,cjs,mjs,jsx}"],
-		plugins: {
-			"jsx-a11y": jsxA11yPlugin,
-		},
-		languageOptions: {
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
 		},
 	},
 
