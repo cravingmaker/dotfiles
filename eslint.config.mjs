@@ -46,6 +46,7 @@ export default tseslint.config(
 		files: ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
 		plugins: {
 			react: reactPlugin,
+			"jsx-a11y": jsxA11yPlugin,
 		},
 		languageOptions: {
 			parserOptions: {
@@ -57,6 +58,9 @@ export default tseslint.config(
 				...globals.browser,
 			},
 		},
+		rules: {
+			...jsxA11yPlugin.configs.recommended.rules,
+		},
 	},
 	{
 		plugins: {
@@ -65,19 +69,6 @@ export default tseslint.config(
 		rules: {
 			...reactHooksPlugin.configs.recommended.rules,
 			"react/react-in-jsx-scope": "off",
-		},
-	},
-	{
-		files: ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
-		plugins: {
-			"jsx-a11y": jsxA11yPlugin,
-		},
-		languageOptions: {
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
-				},
-			},
 		},
 	},
 
